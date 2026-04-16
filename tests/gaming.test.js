@@ -1,6 +1,10 @@
+
 import { describe, it, expect } from 'vitest';
 import { getRandomInt, rectIntersect, circleIntersect, timeToString, generateString, } from '../tasks.js';
 
+
+
+// PDF Functions
 
 describe('getRandomInt', () => {
   it('getRandomInt(-42, 42) < 43 returns true', () => {
@@ -55,3 +59,8 @@ describe('generateString', () => {
     expect(generateString(20)).toMatch(/^[a-z]+$/);
   });
 });
+
+
+
+// Game Functions -> personal
+
