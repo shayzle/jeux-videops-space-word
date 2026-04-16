@@ -23,6 +23,8 @@ jobs:
         run: npm ci
       - name: Unit Testing
         run: npm test
+      - name: Install Playwright
+        run: npx playwright install
       - name: Functional Tests
         run: npm run playwright
       - name: Npm Audit
