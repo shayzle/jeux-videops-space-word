@@ -53,8 +53,12 @@ describe("timeToString", () => {
 
 // Game Functions -> personal
 
-describe("sike", () => {
-  it("sike", () => {
-    expect(sike("do you really think that i'll let you go easy? PLAY THE GAME!")).toBe(true);
+describe("getRandomInt", () => {
+  it("getRandomInt(30, 33) < 43 returns true", () => {
+    expect(getRandomInt(30, 33) < 43).toBe(true);
+  });
+
+  it("getRandomInt(20, 20) returns 20", () => {
+    expect(getRandomInt(20, 20)).toBe(20);
   });
 });
