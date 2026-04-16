@@ -19,9 +19,11 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - name: Install dependencies  
+      - name: Install Dependencies  
         run: npm ci
-      - name: Run tests
-        run: npm run test
-      - name: Npm audit
+      - name: Unit Testing
+        run: npm test
+      - name: Functional Tests
+        run: npm test playwright
+      - name: Npm Audit
         run: npm audit 
