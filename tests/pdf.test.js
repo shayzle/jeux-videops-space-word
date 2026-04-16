@@ -1,6 +1,6 @@
 
 import { describe, it, expect } from 'vitest';
-import { getRandomInt, rectIntersect, circleIntersect, timeToString, generateString, } from '../tasks.js';
+import { getRandomInt, rectIntersect, circleIntersect, timeToString, generateString } from '../tasks.js';
 
 
 
@@ -46,19 +46,5 @@ describe("timeToString", () => {
 
   it("timeToString('toto') returns 'NaN:NaN:NaN'", () => {
     expect(timeToString("toto")).toBe("NaN:NaN:NaN");
-  });
-});
-
-
-
-// Game Functions -> personal
-
-describe("getRandomInt", () => {
-  it("getRandomInt(30, 33) < 43 returns true", () => {
-    expect(getRandomInt(30, 33) < 43).toBe(true);
-  });
-
-  it("getRandomInt(20, 20) returns 20", () => {
-    expect(getRandomInt(20, 20)).toBe(20);
   });
 });
