@@ -1,4 +1,5 @@
 
+// lines 288 from "script.js"
 export function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -6,6 +7,7 @@ export function getRandomInt(min, max) {
 }
 
 
+// lines 329 from "script.js"
 export function rectIntersect(x1, y1, w1, h1, x2, y2, w2, h2) {
   if (x2 > w1 + x1 || x1 > w2 + x2 || y2 > h1 + y1 || y1 > h2 + y2) {
     return false;
@@ -14,12 +16,14 @@ export function rectIntersect(x1, y1, w1, h1, x2, y2, w2, h2) {
 }
 
 
+// lines 337 from "script.js"
 export function circleIntersect(x1, y1, r1, x2, y2, r2) {
   let squareDistance = (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
   return squareDistance <= (r1 + r2) * (r1 + r2);
 }
 
 
+// lines 418 from "script.js"
 export function timeToString(time) {
   let diffInHrs = time / 3600000;
   let hh = Math.floor(diffInHrs);
@@ -41,9 +45,10 @@ export function timeToString(time) {
 }
 
 
+// lines 273 from "script.js"
 export function generateString(length) {
-  const characters = 'abcdefghijklmnopqrstuvwxyz';
   let result = '';
+  const characters = 'abcdefghijklmnopqrstuvwxyz';
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * characters.length));
   }
