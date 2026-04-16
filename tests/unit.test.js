@@ -19,7 +19,7 @@ describe('circleIntersect additional', () => {
     expect(circleIntersect(0, 0, 1, 100, 100, 1)).toBe(false);
   });
 });
-
+ 
 
 describe('generateString additional', () => {
   it('generateString with length 1 returns one character', () => {
