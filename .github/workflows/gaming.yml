@@ -24,6 +24,6 @@ jobs:
       - name: Unit Testing
         run: npm test
       - name: Functional Tests
-        run: npm test playwright
+        run: npm playwright
       - name: Npm Audit
         run: npm audit 
