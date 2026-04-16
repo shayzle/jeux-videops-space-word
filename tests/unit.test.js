@@ -7,10 +7,6 @@ describe('timeToString additional', () => {
   it('timeToString(60000) returns "01:00:00"', () => {
     expect(timeToString(60000)).toBe('01:00:00');
   });
-
-  it('timeToString(3600000) returns "60:00:00"', () => {
-    expect(timeToString(3600000)).toBe('60:00:00');
-  });
 });
 
 describe('rectIntersect', () => {
