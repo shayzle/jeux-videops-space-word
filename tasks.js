@@ -47,8 +47,8 @@ export function timeToString(time) {
 
 // lines 273 from "script.js"
 export function generateString(length) {
-  let result = '';
   const characters = 'abcdefghijklmnopqrstuvwxyz';
+  let result = '';
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * characters.length));
   }
