@@ -1,3 +1,4 @@
+
 const canvasWidth = document.getElementsByTagName('canvas')[0].clientWidth;
 const canvasHeight = document.getElementsByTagName('canvas')[0].clientHeight;
 
