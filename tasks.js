@@ -1,4 +1,8 @@
 
+// Game Functions -> from "script.js"
+// also, this is a clean version of script.js, after mocking and vitest setup etc
+
+
 // lines 288 from "script.js"
 export function getRandomInt(min, max) {
   min = Math.ceil(min);

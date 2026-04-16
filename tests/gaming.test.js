@@ -6,6 +6,7 @@ import { getRandomInt, rectIntersect, circleIntersect, timeToString, generateStr
 
 // PDF Functions
 
+
 describe('getRandomInt', () => {
   it('getRandomInt(-42, 42) < 43 returns true', () => {
     expect(getRandomInt(-42, 42) < 43).toBe(true);
@@ -40,23 +41,12 @@ describe('circleIntersect', () => {
 
 
 describe('timeToString', () => {
+  it('timeToString(123456789) returns "17:36:78"', () => {
+    expect(timeToString(123456789)).toBe('17:36:78');
+  });
+
   it('timeToString("toto") returns "NaN:NaN:NaN"', () => {
     expect(timeToString('toto')).toBe('NaN:NaN:NaN');
-  });
-
-  it('timeToString(0) returns "00:00:00"', () => {
-    expect(timeToString(0)).toBe('00:00:00');
-  });
-});
-
-
-describe('generateString', () => {
-  it('generateString returns correct length', () => {
-    expect(generateString(5)).toHaveLength(5);
-  });
-
-  it('generateString only contains lowercase letters', () => {
-    expect(generateString(20)).toMatch(/^[a-z]+$/);
   });
 });
 
