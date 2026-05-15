@@ -1,4 +1,4 @@
-# SpaceWord 🚀
+# SpaceWord 
 
 > A retro JavaScript word game set in space — forked from [Figur8/js13k-spaceWord](https://github.com/Figur8/js13k-spaceWord) as part of the **Jeux VidéOps** project at Epitech Web@cadémie Paris.
 
