@@ -130,9 +130,9 @@ This project is a binôme collaboration. Each developer owns one game repository
  
 ### Project links
  
-- **Platform website** — [JeuxVidéOps](https://shayzle.github.io/jeux-videops-space-word) *(live on GitHub Pages)*
-- **Razigue's game** — Two Ships Passing In The Night
-- **Shanisya's game** — SpaceWord (this repo)
+- **Platform website** : [JeuxVidéOps](https://shayzle.github.io/jeux-videops-space-word) *(live on GitHub Pages)*
+- **Razigue's game** : [Two Ships Passing In The Night](https://github.com/Razigue/js13k-2021)
+- **Shanisya's game** : SpaceWord (this repo)
 
 ---
 
