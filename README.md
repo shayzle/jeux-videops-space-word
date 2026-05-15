@@ -1,89 +1,131 @@
-# JS13K2021
+# SpaceWord 🚀
 
+> A retro JavaScript word game set in space — forked from [Figur8/js13k-spaceWord](https://github.com/Figur8/js13k-spaceWord) as part of the **Jeux VidéOps** project at Epitech Web@cadémie Paris.
 
+[Live Website Here !](https://jeuvideopsbyrs.netlify.app)
+
+---
+
+## About
+
+SpaceWord is a browser-based game originally built for the [js13kGames 2021](https://js13kgames.com/) competition, where the theme was **"space"** and the total artefact size had to stay under 13 KB.
+
+This fork is part of the **Jeux VidéOps** school project, focused on setting up a CI/CD pipeline using GitHub Actions — not on rewriting the game itself. The goal is to automate quality checks, testing, and deployment so every code change is validated before it ships.
+
+---
+
+## Tech stack
+
+| Layer | Technology |
+|---|---|
+| Game | Vanilla JavaScript, HTML, CSS |
+| CI/CD | GitHub Actions |
+| Linter | ESLint (Google JavaScript Style Guide) |
+| Unit tests | Vitest / Jest |
+| Functional tests | Playwright |
+| Deployment | GitHub Pages |
+
+---
 
 ## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+### Prerequisites
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- Node.js >= 16
+- npm
 
-## Add your files
+### Install dependencies
 
-- [ ] [Create](https://gitlab.com/-/experiment/new_project_readme_content:66ae07258b33c26188f382ea43f0317d?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://gitlab.com/-/experiment/new_project_readme_content:66ae07258b33c26188f382ea43f0317d?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://gitlab.com/-/experiment/new_project_readme_content:66ae07258b33c26188f382ea43f0317d?https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/Figur81/js13k2021.git
-git branch -M main
-git push -uf origin main
+```bash
+npm install
 ```
 
-## Integrate with your tools
+### Run locally
 
-- [ ] [Set up project integrations](https://gitlab.com/-/experiment/new_project_readme_content:66ae07258b33c26188f382ea43f0317d?https://docs.gitlab.com/ee/user/project/integrations/)
+Open `index.html` directly in your browser, or use a local server:
 
-## Collaborate with your team
+```bash
+npx serve .
+```
 
-- [ ] [Invite team members and collaborators](https://gitlab.com/-/experiment/new_project_readme_content:66ae07258b33c26188f382ea43f0317d?https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://gitlab.com/-/experiment/new_project_readme_content:66ae07258b33c26188f382ea43f0317d?https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://gitlab.com/-/experiment/new_project_readme_content:66ae07258b33c26188f382ea43f0317d?https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Automatically merge when pipeline succeeds](https://gitlab.com/-/experiment/new_project_readme_content:66ae07258b33c26188f382ea43f0317d?https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+---
 
-## Test and Deploy
+## CI/CD pipeline
 
-Use the built-in continuous integration in GitLab.
+The GitHub Actions workflow runs automatically on every push and pull request targeting `main`, and can also be triggered manually from the Actions tab.
 
-- [ ] [Get started with GitLab CI/CD](https://gitlab.com/-/experiment/new_project_readme_content:66ae07258b33c26188f382ea43f0317d?https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://gitlab.com/-/experiment/new_project_readme_content:66ae07258b33c26188f382ea43f0317d?https://docs.gitlab.com/ee/user/application_security/sast/)
+### What the pipeline does
 
-***
+1. **Install** — sets up Node.js and installs dependencies via `npm ci`
+2. **Lint** — checks code style against the [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html) using ESLint
+3. **Unit tests** — runs the unit test suite and reports results
+4. **Functional tests** — runs browser-based tests with Playwright
+5. **Audit** — runs `npm audit` to flag known vulnerabilities in dependencies
+6. **Deploy** — publishes the game to GitHub Pages on a successful pipeline on `main`
 
-# Editing this README
+### Trigger conditions
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://gitlab.com/-/experiment/new_project_readme_content:66ae07258b33c26188f382ea43f0317d?https://www.makeareadme.com/) for this template.
+| Event | Runs pipeline |
+|---|---|
+| Push on any branch | yes |
+| Pull request targeting `main` | yes |
+| Manual dispatch | yes |
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+---
 
-## Name
-Choose a self-explaining name for your project.
+## Tests
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+### Unit tests provided by the project brief
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+| Function | Expected |
+|---|---|
+| `getRandomInt(-42, 42) < 43` | `true` |
+| `getRandomInt(42, 42)` | `42` |
+| `rectIntersect(1,1,2,1,4,1,1,2)` | `false` |
+| `rectIntersect(1,1,5,2,4,1,1,2)` | `true` |
+| `circleIntersect(3,2,1,6,1,1.5)` | `false` |
+| `circleIntersect(3,2,1,3,-2,4)` | `true` |
+| `timeToString(123456789)` | `"17:36:78"` |
+| `timeToString("toto")` | `"NaN:NaN:NaN"` |
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+At least 5 additional unit tests and 3 functional tests are written as part of this project.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+### Run tests
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+```bash
+# Unit tests
+npm test
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+# Functional tests
+npm run test:e2e
+```
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+---
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+## Security
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+This project follows DevSecOps practices:
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+- `npm audit` runs on every pipeline to catch dependency vulnerabilities early
+- No tokens, passwords, or API keys are committed to the repository — credentials are injected via GitHub Secrets
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+---
+
+## Project context
+
+This repo is part of **Jeux VidéOps**, a Epitech Web@cadémie project built around the DevOps principle: **automate more to work less, and ship more reliably**.
+
+Each team member acts as both Developer and Operator, and must be able to reproduce the full pipeline independently.
+
+---
+
+## Original game
+
+SpaceWord was created by [Figur8](https://github.com/Figur8) for js13kGames 2021.  
+Original repo: https://github.com/Figur8/js13k-spaceWord
+
+---
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
-
+This fork inherits the license from the original repository. See the original repo for details.
