@@ -10,7 +10,7 @@
 
 SpaceWord is a browser-based game originally built for the [js13kGames 2021](https://js13kgames.com/) competition, where the theme was **"space"** and the total artefact size had to stay under 13 KB.
 
-This fork is part of the **Jeux VidéOps** school project, focused on setting up a CI/CD pipeline using GitHub Actions — not on rewriting the game itself. The goal is to automate quality checks, testing, and deployment so every code change is validated before it ships.
+This fork is part of the **Jeux VidéOps** school project, focused on setting up a CI/CD pipeline using GitHub Actions, not on rewriting the game itself. The goal is to automate quality checks, testing, and deployment so every code change is validated before it ships.
 
 ---
 
@@ -56,12 +56,12 @@ The GitHub Actions workflow runs automatically on every push and pull request ta
 
 ### What the pipeline does
 
-1. **Install** — sets up Node.js and installs dependencies via `npm ci`
-2. **Lint** — checks code style against the [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html) using ESLint
-3. **Unit tests** — runs the unit test suite and reports results
-4. **Functional tests** — runs browser-based tests with Playwright
-5. **Audit** — runs `npm audit` to flag known vulnerabilities in dependencies
-6. **Deploy** — publishes the game to GitHub Pages on a successful pipeline on `main`
+1. **Install** : sets up Node.js and installs dependencies via `npm ci`
+2. **Lint** : checks code style against the [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html) using ESLint
+3. **Unit tests** : runs the unit test suite and reports results
+4. **Functional tests** : runs browser-based tests with Playwright
+5. **Audit** : runs `npm audit` to flag known vulnerabilities in dependencies
+6. **Deploy** : publishes the game to GitHub Pages on a successful pipeline on `main`
 
 ### Trigger conditions
 
@@ -107,7 +107,7 @@ npm run test:e2e
 This project follows DevSecOps practices:
 
 - `npm audit` runs on every pipeline to catch dependency vulnerabilities early
-- No tokens, passwords, or API keys are committed to the repository — credentials are injected via GitHub Secrets
+- No tokens, passwords, or API keys are committed to the repository, credentials are injected via GitHub Secrets
 
 ---
 
@@ -116,6 +116,23 @@ This project follows DevSecOps practices:
 This repo is part of **Jeux VidéOps**, a Epitech Web@cadémie project built around the DevOps principle: **automate more to work less, and ship more reliably**.
 
 Each team member acts as both Developer and Operator, and must be able to reproduce the full pipeline independently.
+
+---
+ 
+## Team
+ 
+This project is a binôme collaboration. Each developer owns one game repository and is responsible for its full CI/CD pipeline, from writing tests to deploying on GitHub Pages.
+ 
+| Role | Name | Game |
+|---|---|---|
+| Developer | Razigue | [Two Ships Passing In The Night](https://github.com/Razigue/jeux-videops-two-ships) |
+| Developer | Shanisya | [SpaceWord](https://github.com/shayzle/jeux-videops-space-word) |
+ 
+### Project links
+ 
+- **Platform website** — [JeuxVidéOps](https://shayzle.github.io/jeux-videops-space-word) *(live on GitHub Pages)*
+- **Razigue's game** — Two Ships Passing In The Night
+- **Shanisya's game** — SpaceWord (this repo)
 
 ---
 
